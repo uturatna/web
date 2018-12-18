@@ -46,9 +46,9 @@ class pengumuman extends CI_Controller
 			redirect('admin/pengumuman');
 		}
 	}
-	public function Hapus($Kd)
+	public function Hapus($id)
 	{
-		if ($this->pengumuman_model->remove($Kd)) {
+		if ($this->pengumuman_model->remove($id)) {
 			$this->session->set_flashdata('info', 'Data Berhasil Dihapus');
 			redirect('admin/pengumuman');
 		}else{
@@ -56,13 +56,13 @@ class pengumuman extends CI_Controller
 			redirect('admin/pengumuman');
 		}
 	}
-	public function edit($Kd)
+	public function edit($id)
 	{
 		$data['judul']='Edit Pengumuman';
 		$data['sub_judul']='Edit Halaman Pengumuman';
 		$data['halaman']='admin/v_edit';
 
-		$data['isi'] = $this->pengumuman_model->get_id($Kd);
+		$data['isi'] = $this->pengumuman_model->get_id($id);
 
 		$this->load->view('admin/v_template', $data);	
 	}

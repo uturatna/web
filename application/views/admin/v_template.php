@@ -3,9 +3,18 @@
 <head>
 	<title><?php echo $judul ?></title>
 	<link rel="stylesheet" href="<?php echo base_url('assets/dist/css/bootstrap.css'); ?>">
+
+   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/dist/css/carousel.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome.css">
+
+  <style type="text/css">
+  .bg{
+    background-color: #DB7093;
+  }
+</style>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-warning" ">
+	<nav class="navbar navbar-expand-lg navbar-light bg">
   <a class="navbar-brand" href="#">Project</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

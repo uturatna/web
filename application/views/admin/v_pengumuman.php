@@ -24,7 +24,7 @@
  				<div style="border: 1px solid orange; padding: 15px; margin-bottom: 10px ">
  				<div class="row">
  					<div class="col-sm-1">
- 						<img width="75px" height="75px" src="<?php echo base_url('assets/bahtiar1.jpg') ?>" class="rounded-circle">
+ 						<img width="75px" height="75px" src="<?php echo base_url('assets/ratna.jpg') ?>" class="rounded-circle">
  					</div>
  					<div class="col-sm-11">
  						penulis : <strong><?= $value->penulis ?></strong>
@@ -46,8 +46,8 @@
  						
  					</div>
  					<div class="col-md-2">
- 						<a href="<?php echo site_url('admin/pengumuman/edit/' . $value->Kd); ?>" class="btn btn-primary">Edit</a>
- 						<a href="<?php echo site_url('admin/pengumuman/hapus/' . $value->Kd); ?>" class="btn btn-danger"
+ 						<a href="<?php echo site_url('admin/pengumuman/edit/' . $value->id); ?>" class="btn btn-primary">Edit</a>
+ 						<a href="<?php echo site_url('admin/pengumuman/hapus/' . $value->id); ?>" class="btn btn-danger"
  							onclick="return confirm('Anda Yakin >')">Hapus</a>
  					</div>
  				</div>

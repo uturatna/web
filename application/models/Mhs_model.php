@@ -5,23 +5,20 @@ class Mhs_model extends CI_Model {
 
 	public function all()
 	{
-		return $this->db->get('mahasiwa')->result();
+		return $this->db->get('mahasiswa')->result();
 	}
-	public function create($a)
+	public function create($id)
 	{
-		return $this->db->insert('mahasiwa', $a);
+		return $this->db->insert('mahasiswa', $id);
 	}
 	public function get_id($nim){
-	return $this->db->where('nim', $nim)->get('mahasiwa')->row();
+	return $this->db->where('nim', $nim)->get('mahasiswa')->row();
 	}
-	public function update($nim, $a){
-	return $this->db->where('nim', $nim)->update('mahasiwa', $a);
+	public function update($id, $obj){
+	return $this->db->where('nim', $nim)->update('mahasiswa', $obj);
 	}
 	public function remove($nim){
-	return $this->db->delete('mahasiwa', array('nim' => $nim));
+	return $this->db->delete('mahasiswa', array('nim' => $nim));
 	}
 
 }
-
-/* End of file mhs_mode.php */
-/* Location: ./application/models/mhs_mode.php */

@@ -16,7 +16,7 @@
  					<div class="form-group">
  						<label>Penulis</label>
  						<input type="text" class="form-control" name="penulis" value="<?php echo $isi->penulis ?>">
- 						<input type="hidden" name="id" value="<?php echo $isi->Kd; ?>">
+ 						<input type="hidden" name="id" value="<?php echo $isi->id; ?>">
  					</div>
  					<input type="submit" name="submit" value="Simpan" class="btn btn-primary">
  					<a href="<?php echo site_url('admin/pengumuman') ?>" class="btn btn-danger">Batal</a>

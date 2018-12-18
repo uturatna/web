@@ -7,27 +7,27 @@ class Dosen extends CI_Controller {
 	{
 		parent::__construct();
 		
-		$this->load->model('m_dosen');
+		$this->load->model('Model_dosen');
 	}
 
 	public function index()
 	{
 		$data['judul']='Halaman Dosen';
 		$data['sub_judul']='Data Dosen';
-		$data['halaman']='dosen/v_dosen';
-		$data['isi']=$this->m_dosen->all();
+		$data['halaman']='admin/v_dosen';
+		$data['isi']=$this->Model_dosen->all();
 
 		$this->load->view('admin/v_template', $data);
 	}
-	public function add_data()
+	public function tambah_data()
 	{
 		$data['judul']='Halaman Tambah Dosen';
 		$data['sub_judul']='Tambah Data Dosen';
-		$data['halaman']='dosen/v_tambah_dosen';
+		$data['halaman']='admin/v_tambah_dosen';
 
 		$this->load->view('admin/v_template', $data);
 	}
-	public function add_process()
+	public function tambah_process()
 	{
 		$nik=$this->input->post('nik');
 		$nama=$this->input->post('nama');
@@ -38,7 +38,7 @@ class Dosen extends CI_Controller {
 			'nama_dosen'=> $nama,
 			'alamat'=> $alamat 
 		);
-	if ($this->m_dosen-> create($obj)) {
+	if ($this->Model_dosen-> create($obj)) {
 			$this->session->set_flashdata('info', 'Data Berhasil Disimpan');
 			redirect('admin/dosen');
 	}else{
@@ -52,7 +52,7 @@ class Dosen extends CI_Controller {
 		$data['sub_judul']='Edit Data';
 		$data['halaman']='dosen/v_edit';
 
-		$data['isi'] = $this->m_dosen->get_id($nik);
+		$data['isi'] = $this->Model_dosen->get_id($nik);
 
 		$this->load->view('admin/v_template', $data);	
 	}

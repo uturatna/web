@@ -14,14 +14,14 @@ public function create($obj){
 return $this->db->insert('pengumuman', $obj);
 
 }
-public function get_id($Kd){
-return $this->db->where('Kd', $Kd)->get('pengumuman')->row();
+public function get_id($id){
+return $this->db->where('id', $id)->get('pengumuman')->row();
 }
-public function remove($Kd){
-return $this->db->delete('pengumuman', array('Kd' => $Kd));
+public function remove($id){
+return $this->db->delete('pengumuman', array('id' => $id));
 }
 public function update($id, $obj){
-return $this->db->where('Kd', $id)->update('pengumuman', $obj);
+return $this->db->where('id', $id)->update('pengumuman', $obj);
 }
 
 }

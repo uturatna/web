@@ -28,12 +28,12 @@ class Mahasiswa extends CI_Controller {
 	$nim= $this->input->post('nim');	
 	$nama= $this->input->post('nama');	
 	$program= $this->input->post('program');
-	$a=array(
+	$id=array(
 		'nim'=>$nim,
 		'nama_mhs'=>$nama,
 		'program_study'=>$program
 	);
-	if ($this->Mhs_model-> create($a)) {
+	if ($this->Mhs_model-> create($id)) {
 			$this->session->set_flashdata('info', 'Data Berhasil Disimpan');
 			redirect('admin/mahasiswa');
 	}else{
@@ -41,26 +41,29 @@ class Mahasiswa extends CI_Controller {
 			redirect('admin/mahasiswa');
 	}
 	}
-	public function edit_mhs($nim)
+	public function edit_mhs($id)
 	{
-	$data['judul']='Edit Data';		
-	$data['sub_judul']='Edit Data';		
-	$data['halaman']='admin/v_edit_mhs';
-	$data['isi'] = $this->Mhs_model->get_id($nim);
-	$this->load->view('admin/v_template', $data);
+		$data['judul']='Edit Mahasiswa';
+		$data['sub_judul']='Edit Halaman Mahasiswa';
+		$data['halaman']='admin/v_edit_mhs';
+
+		$data['isi'] = $this->Mhs_model->get_id($id);
+
+		$this->load->view('admin/v_template', $data);	
 	}
 	public function edit_process()
 	{
-	$nim= $this->input->post('nim');	
-	$nama= $this->input->post('nama');	
-	$program= $this->input->post('program');
-	$a=array(
-		'nim'=>$nim,
-		'nama_mhs'=>$nama,
-		'program_study'=>$program
-	);
-		
-		if ($this->Mhs_model->update($nim, $a)) {
+		$nim= $this->input->post('nim');	
+		$nama= $this->input->post('nama');	
+		$program= $this->input->post('program');
+		$id = $this->input->post('id');
+
+		$obj = array(
+			'nim'=>$nim,
+			'nama_mhs'=>$nama,
+			'program_study'=>$program
+		);
+		if ($this->Mhs_model->update($id, $obj)) {
 			$this->session->set_flashdata('info', 'Data Berhasil DiEdit');
 			redirect('admin/mahasiswa');
 		}else{
